@@ -1,0 +1,54 @@
+<app-alert [message]="message"></app-alert>
+<div class="container">
+    <div class="row">
+        <h1>BLOCKCHAIN</h1>
+        <div class="card text-center">
+          <div class="card-header">
+            <h2>Menú</h2>
+          </div>
+          <div class="card-body">
+            <a href="#" class="btn btn-primary d-block w-25 mx-auto mb-2">Mostrar Blockchain</a>
+            <a href="#" class="btn btn-primary d-block w-25 mx-auto mb-2">Modificar</a>
+            <a href="/register" class="btn btn-primary d-block w-25 mx-auto">Agregar Transacción</a>
+          </div>
+        </div>
+        <table *ngIf="data" class="table table-striped">
+            <thead>
+                <tr class="table-info">
+                    <th scope="col">Cédula</th>
+                    <th scope="col">Primer nombre</th>
+                    <th scope="col">Segundo nombre</th>
+                    <th scope="col">Primer Apellido</th>
+                    <th scope="col">Segundo Apellido</th>
+                    <th scope="col">
+                        <div class="icons">
+                            Fecha de nacimiento
+                            <div>
+                                <img (click)="dateUpdate(true)" class="icon-table"
+                                    src="../../assets/Img/up-chevron-svgrepo-com.svg" alt="">
+                                <img (click)="dateUpdate(false)" class="icon-table"
+                                    src="../../assets/Img/down-chevron-svgrepo-com.svg" alt="">
+                            </div>
+                        </div>
+                    </th>
+                    <th scope="col" colspan="2">Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let item of data.data">
+                    <td>{{item.cedula}}</td>
+                    <td>{{item.primerNombre}}</td>
+                    <td>{{item.segundoNombre}}</td>
+                    <td>{{item.primerApellido}}</td>
+                    <td>{{item.segundoApellido}}</td>
+                    <td>{{item.fechaNacimiento}}</td>
+                    <td colspan="2">
+                        <button type="button" class="btn btn-primary" (click)="navigateToUpdate(item.cedula)">Editar</button>
+                        <button type="button" class="btn btn-danger" (click)="dateDelete(item.cedula)">Eliminar</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+<app-footer></app-footer>

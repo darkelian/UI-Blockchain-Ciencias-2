@@ -1,0 +1,22 @@
+<h1>BLOCKCHAIN - Registrar Transacción</h1>
+<app-alert [message]="message"></app-alert>
+<div class="container">
+    <div class="row">
+        <form [formGroup]="form" (ngSubmit)="onSubmit()">
+            <div class="form-group">
+                <label for="Id">Número de Transacción <span class="obli">*</span></label>
+                <input type="number" class="form-control" id="exampleInputEmail1" aria-describedby="cedulaHelp"
+                    placeholder="Ingrese cédula" formControlName="username" placeholder="1">
+                <label for="IdProducto1">Producto 1 <span class="obli">*</span></label>
+                <input type="number" class="form-control" id="exampleInputEmail1" aria-describedby="cedulaHelp"
+                    placeholder="Ingrese cédula" formControlName="username" placeholder="100062">
+                <label for="IdProducto1">Producto 2 <span class="obli">*</span></label>
+                <input type="number" class="form-control" id="exampleInputEmail1" aria-describedby="cedulaHelp"
+                    placeholder="Ingrese cédula" formControlName="username" placeholder="100062">
+            </div>
+            <button type="submit" class="btn btn-primary">registrar</button>
+            <button type="button" routerLink="/home" class="btn btn-secondary buttons-crud">Volver</button>
+        </form>
+    </div>
+</div>
+<app-footer></app-footer>
